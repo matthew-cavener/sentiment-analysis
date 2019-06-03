@@ -10,7 +10,7 @@ train_embeddings = utils.combined_embeddings(train['text'].tolist())
 test_embeddings = utils.combined_embeddings(test['text'].tolist())
 
 clf = MLPC(
-    hidden_layer_sizes=[516]*16,
+    hidden_layer_sizes=(256),
     learning_rate='adaptive',
     max_iter=1000
 )

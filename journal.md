@@ -222,3 +222,31 @@ weighted avg       0.78      0.79      0.77       778
 ```
 
 The multilayer perceptron works pretty well out of the box, let's play with that.
+So with 32 layers of 512 neurons, it... stayed about the same.
+```
+              precision    recall  f1-score   support
+
+           1       0.82      0.73      0.77       246
+           3       0.74      0.86      0.80       417
+           5       0.65      0.48      0.55        98
+not_relevant       0.29      0.12      0.17        17
+
+    accuracy                           0.75       778
+   macro avg       0.62      0.55      0.57       778
+weighted avg       0.75      0.75      0.74       778
+```
+If I take the conventional wisdom, off 1 layer with a number of neurons between the input size and output size ~256:
+```
+              precision    recall  f1-score   support
+
+           1       0.77      0.72      0.75       247
+           3       0.77      0.84      0.80       426
+           5       0.66      0.53      0.59        91
+not_relevant       0.00      0.00      0.00        14
+
+    accuracy                           0.75       778
+   macro avg       0.55      0.52      0.53       778
+weighted avg       0.74      0.75      0.75       778
+```
+
+So far the SVC performs best, which is kinda what I expected, cool.
