@@ -250,3 +250,10 @@ weighted avg       0.74      0.75      0.75       778
 ```
 
 So far the SVC performs best, which is kinda what I expected, cool.
+![We can pickle that!](http://gph.is/2ht7ISo)
+
+So I looked into some hyperparameter optimization methods, looks like there is a neat python library for it, `hyperopt-sklearn`, or more generall `hyperopt`.
+The promise of hpsklearn was optimize all your hyperparameters, including your classifier choice. I could get it working after spending a bit with it, but I'll check it out later.
+Then I tried just plain `hyperopt` on the SVC, it takes about 30 seconds per trial, and doesn't seem to be doing any better so far than the slightly tuned one I used before.
+I'll procedd by just pickling up that SVC model, and creating an endpoint around `predict_proba()` with it. And probably a validation endpoint to make that step easy.
+I'd LIKE to try out some other embeddings/fine tune another model, and maybe set up an ensemble to better predict that `not_relevant` class. I'll see how that goes.
