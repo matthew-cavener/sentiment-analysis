@@ -3,6 +3,10 @@ Clone this repo:
 
 `git clone https://github.com/matthew-cavener/sentiment-analysis.git`
 
+Navigate to `sentiment-analysis`:
+
+`cd sentiment-analysis`
+
 Start the training and server(It will take awhile, you can use the `/health` endpoint to check if ti is ready.):
 
 `docker-compose up`
