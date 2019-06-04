@@ -1,0 +1,17 @@
+version: '3'
+services:
+  sentiment:
+    tty: true
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/usr/src/app/sentiment
+    command: >
+      sh -c "python3 tfhub_cache.py &&
+             python3 models/train/sentimentSVM.py &&
+             gunicorn \
+             app:__hug_wsgi__ \
+             --reload \
+             --bind 0.0.0.0:8080 \
+             --workers 1"
