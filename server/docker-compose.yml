@@ -8,8 +8,7 @@ services:
     volumes:
       - .:/usr/src/app/sentiment
     command: >
-      sh -c "python3 tfhub_cache.py &&
-             python3 models/train/sentimentSVM.py &&
+      sh -c "python3 models/train/SVC.py &&
              gunicorn \
              app:__hug_wsgi__ \
              --reload \

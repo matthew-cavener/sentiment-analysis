@@ -6,10 +6,6 @@ from hyperopt import tpe
 
 train, test = train_test_split(utils.read_data(), test_size=0.2)
 
-# train_embeddings = utils.combined_embeddings(train['text'].tolist())
-# test_embeddings = utils.combined_embeddings(test['text'].tolist())
-
-
 estim = HyperoptEstimator(
     algo=tpe.suggest,
     max_evals=50,
