@@ -35,10 +35,10 @@ def clean_tweet(tweet):
     cleaned = ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", tweet).split())
     return cleaned
 
-def label_relevent(sentiment):
+def clean_sentiment(sentiment):
     if sentiment == 'not_relevant':
-        return "-1"
-    return sentiment
+        return -1
+    return int(sentiment)
 
 def read_data():
     return pd.read_csv('/usr/src/app/sentiment/data/Apple-Twitter-Sentiment-DFE.csv',

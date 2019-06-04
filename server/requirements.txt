@@ -5,6 +5,7 @@ numpy==1.16.4
 pandas==0.24.2
 vaderSentiment==3.2.1
 umap-learn==0.3.9
+hyperopt==0.1.2
 
 hug==2.5.4
 gunicorn==19.9.0

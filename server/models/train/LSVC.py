@@ -15,6 +15,6 @@ clf = LSVC(
 )
 clf.fit(train_embeddings, train['sentiment'])
 
-prediction = clf.predict(test_embeddings)
+prediction = clf.predict_proba(test_embeddings)[:, 1]
 report = classification_report(test['sentiment'], prediction)
 print(report)
