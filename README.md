@@ -1,11 +1,14 @@
 # Quick Start
 Clone this repo:
+
 `git clone https://github.com/matthew-cavener/sentiment-analysis.git`
 
 Navigate to `sentiment-analysis/server`:
+
 `cd sentiment-analysis/server`
 
 Start the training and server(It will take awhile):
+
 `docker-compose up`
 
 Use the `/predict` endpoint at `0.0.0.0:8080` to make sentiment predictions about Apple:
