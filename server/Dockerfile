@@ -14,4 +14,4 @@ ENV TF_CPP_MIN_LOG_LEVEL=3
 
 RUN useradd -ms /bin/bash sentiment
 USER sentiment
-EXPOSE 8080
+EXPOSE 8081

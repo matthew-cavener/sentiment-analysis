@@ -8,31 +8,31 @@ cd sentiment-analysis
 docker-compose up
 ```
 
-Use the `/predict` endpoint at `0.0.0.0:8080` to make sentiment predictions about Apple:
+Use the `/predict` endpoint at `0.0.0.0:8081` to make sentiment predictions about Apple:
 ```
 curl -X POST \
-  http://0.0.0.0:8080/predict \
+  http://0.0.0.0:8081/predict \
   -F 'text= My computer is so broken!'
 
 returns:
 {"not_relevant": 0.005387865395154152, "negative": 0.9436414900529212, "positive": 0.018740593702031454, "neutral": 0.03223005084989302}
 
 curl -X POST \
-  http://0.0.0.0:8080/predict \
+  http://0.0.0.0:8081/predict \
   -F 'text=My computer is so awesome!'
 
 returns:
 {"not_relevant": 0.0020955397161594065, "negative": 0.02260511985303398, "positive": 0.9544383861491378, "neutral": 0.02086095428166866}
 
 curl -X POST \
-  http://0.0.0.0:8080/predict \
+  http://0.0.0.0:8081/predict \
   -F 'text=My macbook is not a terribly bad machine.'
 
 returns:
 {"not_relevant": 0.0031329688599764367, "negative": 0.18629947141244943, "positive": 0.7409472185026398, "neutral": 0.06962034122493423}
 
 curl -X POST \
-  http://0.0.0.0:8080/predict \
+  http://0.0.0.0:8081/predict \
   -F 'text=I wish apple could get their act together and stop blocking the whole screen with a volume indicator.'
 
 returns:
