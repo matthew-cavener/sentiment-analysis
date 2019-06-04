@@ -4,7 +4,7 @@ services:
     tty: true
     build: ./server
     ports:
-      - "8080:8080"
+      - "8081:8081"
     volumes:
       - ./server:/usr/src/app/sentiment
     command: >
@@ -12,5 +12,5 @@ services:
              gunicorn \
              app:__hug_wsgi__ \
              --reload \
-             --bind 0.0.0.0:8080 \
+             --bind 0.0.0.0:8081 \
              --workers 1"
