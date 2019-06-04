@@ -2,11 +2,11 @@ version: '3'
 services:
   sentiment:
     tty: true
-    build: .
+    build: ./server
     ports:
       - "8080:8080"
     volumes:
-      - .:/usr/src/app/sentiment
+      - ./server:/usr/src/app/sentiment
     command: >
       sh -c "python3 models/train/SVC.py &&
              gunicorn \
