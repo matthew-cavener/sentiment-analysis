@@ -13,8 +13,8 @@ if isfile(filename) == False:
 
     train, test = train_test_split(utils.read_data(), test_size=0.2)
 
-    train_embeddings = utils.combined_embeddings(train['text'].tolist())
-    test_embeddings = utils.combined_embeddings(test['text'].tolist())
+    train_embeddings = utils.combined_embeddings(train['text'].tolist(), module='USE')
+    test_embeddings = utils.combined_embeddings(test['text'].tolist(), module='USE')
 
     clf = SVC(
         kernel='rbf',

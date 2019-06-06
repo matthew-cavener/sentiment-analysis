@@ -8,8 +8,11 @@ import re
 from collections import OrderedDict
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-def generate_use_embeddings(text):
-    module_url = "https://tfhub.dev/google/universal-sentence-encoder-large/3"
+def generate_hub_embeddings(text, module):
+    if module == 'USE':
+        module_url = "https://tfhub.dev/google/universal-sentence-encoder-large/3"
+    elif module == 'ELMo':
+        module_url = "https://tfhub.dev/google/elmo/2"
     embed = hub.Module(module_url, trainable=True)
     with tf.Session() as session:
         session.run([tf.global_variables_initializer(), tf.tables_initializer()])
@@ -25,10 +28,10 @@ def generate_vader_embeddings(text):
         vader_embeddings.append(list(vs.values()))
     return vader_embeddings
 
-def combined_embeddings(text):
-    use_embeddings = generate_use_embeddings(text)
+def combined_embeddings(text, module):
+    hub_embeddings = generate_hub_embeddings(text, module)
     vader_embeddings = generate_vader_embeddings(text)
-    combined_embeddings = np.append(use_embeddings, vader_embeddings, axis=1)
+    combined_embeddings = np.append(hub_embeddings, vader_embeddings, axis=1)
     return combined_embeddings
 
 def clean_tweet(tweet):
