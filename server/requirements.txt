@@ -1,7 +1,7 @@
 tensorflow==1.13.1
 tensorflow_hub==0.4.0
 scikit-learn==0.21.2
-numpy==1.16.4
+numpy==1.22.0
 pandas==0.24.2
 vaderSentiment==3.2.1
 umap-learn==0.3.9
